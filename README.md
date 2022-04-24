@@ -1,4 +1,11 @@
 # CIRCADIAN CLI
 
-pomodoro in the command line
+Pomodoro in the command line
 
+## Dependencies
+
+* Ruby version 3.0.2
+
+## TODO:
+
+* [ ] 
