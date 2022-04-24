@@ -22,24 +22,22 @@ class Circadian
     @task = Task.new(0, 1, 0)
   end
 
-  def log(task, message)
+  def log(task)
+    $stdout.print("\033[1A") # move cursor one line up
+    $stdout.print("\033[K") # delete til end of line
     #puts '00:00:00> '
-    $stdout.print("\033[1A")
-    #$stdout.print("\033[2J") # clears the whole thing
-    #$stdout.print("\033[K")
-    $stdout.print("\033[2K")
-    $stdout.puts("#{task}> #{message}")
+    $stdout.print("#{task}> ")
+    #$stdout.puts("#{message}")
     #puts "#{task}> #{message}"
   end
 
   def run
     puts @prompt
-
-    #puts "#{@task}> Let's get started"
-    log(@task, "Let's get started")
+    log(@task)
+    puts "Let's get started"
     sleep 1
-    #print "#{@task}> "
-    log(@task, "")
+    log(@task)
+    #log(@task, "")
 
     get_user_input = true
     while (get_user_input)
@@ -47,11 +45,13 @@ class Circadian
       user_input = gets.chomp
       #sys.stdout.write "\rthe user input is: #{user_input}" 
       if user_input == 'start'
+        log(@task)
         #puts '5:00'
-        log(@task, "starting now ... ")
+        #log(@task, "starting now ... ")
         # start countdown sequence and output
+      else
+        log(@task)
       end
-
        #how can I replace the top line
        #then have the second line as the user input just in case
 
