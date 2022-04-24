@@ -1,27 +1,35 @@
 def main
-  @prompt = 'Circadian interface online:...'
-  puts @prompt
+  #@prompt = 'Circadian interface online:...'
+  #puts @prompt
 
-  $stdout.write('$ ...')
+  #sys.stdout.write('\r$ ...')
 
-  get_user_input = true
-  while (get_user_input)
-    user_input = gets.chomp
-    $stdout.flush
-    puts '\rthe user input is: ' + user_input
+  puts 'testing ...'
+  sleep 1
+  $stdout.print("\033[1A")
+  puts 'does this work???'
+  #$stdout.print("one more time. ...")
+  #$stdout.flush
 
-    if user_input == 'start'
-      puts '5:00'
-    end
+  #$stdout.puts($stdin.gets.inspect)
 
-    # how can I replace the top line
-    # then have the second line as the user input just in case
+  #get_user_input = true
+  #while (get_user_input)
+    #user_input = gets.chomp
+    #sys.stdout.flush()
+    #sys.stdout.write "\rthe user input is: #{user_input}" 
+    #if user_input == 'start'
+      #puts '5:00'
+    #end
 
-    if user_input == 'exit'
-      puts 'Goodbye :)'
-      get_user_input = false
-    end
-  end
+     #how can I replace the top line
+     #then have the second line as the user input just in case
+
+    #if user_input == 'exit'
+      #puts 'Goodbye :)'
+      #get_user_input = false
+    #end
+  #end
 
 end
 
