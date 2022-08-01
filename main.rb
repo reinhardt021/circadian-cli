@@ -44,21 +44,19 @@ class Circadian
       #user_input = "somethign"
       user_input = gets.chomp
       #sys.stdout.write "\rthe user input is: #{user_input}" 
-      if user_input == 'start'
+      if user_input == 'exit'
+        puts 'Goodbye :)'
+        get_user_input = false
+      elsif user_input == 'start'
         log(@task)
         #puts '5:00'
         #log(@task, "starting now ... ")
         # start countdown sequence and output
       else
+        # if command unrecognized then just clear line
         log(@task)
       end
-       #how can I replace the top line
-       #then have the second line as the user input just in case
 
-      if user_input == 'exit'
-        puts 'Goodbye :)'
-        get_user_input = false
-      end
     end
 
   end
